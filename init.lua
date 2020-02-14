@@ -3,8 +3,7 @@
 -- Convenience
 local invoke, list, proxy = component.invoke, component.list, component.proxy
 -- Get the boot-fs address, and detect other filesystems
-local eeprom = list("eeprom")()
-local addr = invoke(eeprom, "getData") -- The boot filesystem address is stored as EEPROM data
+local addr = list("filesystem")()
 -- Proxy it!
 local rootfs = proxy(addr)
 -- A table of all connected filesystems
